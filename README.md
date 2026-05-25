@@ -32,10 +32,20 @@ terraform apply
 
 ## Learned
 
-- TerraformはAWSなどのインフラをコードで管理するツール
-- AWSアクセスキーを使ってTerraformとAWSを連携する
-- providerで使用するクラウド（AWSなど）を決める
-- resourceで作成するリソースの種類（S3、EC2など）を決める
-- resourceの2つ目の名前はTerraform内部での識別名
-- bucketパラメータで実際のS3バケット名（AWS上の名前）を決める
-- S3バケット名は世界で一意である必要がある
+- TerraformはAWSなどのインフラをコードで管理するツール  
+  Terraform is an Infrastructure as Code (IaC) tool for managing AWS infrastructure.
+
+- AWSアクセスキーを使ってTerraformとAWSを連携する  
+  Terraform connects to AWS using access keys.
+
+- providerで使用するクラウドを決める  
+  The provider defines which cloud is used.
+
+- resourceで作成するリソースの種類（S3、EC2など）を決める  
+  Resources define what is created (e.g., S3, EC2).
+
+- bucketパラメータで実際のS3バケット名を決める  
+  The bucket parameter defines the actual S3 bucket name in AWS.
+
+- S3バケット名は世界で一意である必要がある  
+  S3 bucket names must be globally unique.
