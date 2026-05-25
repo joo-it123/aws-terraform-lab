@@ -30,7 +30,7 @@ terraform apply
 
 ---
 
-## Learned
+## Learned（学んだこと）
 
 - TerraformはAWSなどのインフラをコードで管理するツール  
   Terraform is an Infrastructure as Code (IaC) tool for managing AWS infrastructure.
