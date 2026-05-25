@@ -22,7 +22,17 @@ This repository is for learning AWS infrastructure provisioning using Terraform.
 
 ## Usage（使い方）
 
-```bash id="usage1"
+```bash
 terraform init
 terraform plan
 terraform apply
+
+## Learned
+
+- TerraformはAWSなどのインフラをコードで管理するツール
+- AWSアクセスキーを使ってTerraformとAWSを連携する
+- providerで使用するクラウド（AWSなど）を決める
+- resourceで作成するリソースの種類（S3、EC2など）を決める
+- resourceの2つ目の名前はTerraform内部での識別名
+- bucketパラメータで実際のS3バケット名（AWS上の名前）を決める
+- S3バケット名は世界で一意である必要がある
