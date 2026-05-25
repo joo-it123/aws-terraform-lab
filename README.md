@@ -26,6 +26,7 @@ This repository is for learning AWS infrastructure provisioning using Terraform.
 terraform init
 terraform plan
 terraform apply
+```  
 
 ## Learned
 
