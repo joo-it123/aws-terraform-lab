@@ -10,6 +10,7 @@ This repository is for learning AWS infrastructure provisioning using Terraform.
 
 - EC2（仮想サーバー）
 - S3（オブジェクトストレージ）
+- Security Group（ファイアウォール設定）
 
 ---
 
@@ -17,6 +18,7 @@ This repository is for learning AWS infrastructure provisioning using Terraform.
 
 - Terraform（IaCツール）
 - AWS（クラウド環境）
+- Git / GitHub
 
 ---
 
@@ -26,7 +28,19 @@ This repository is for learning AWS infrastructure provisioning using Terraform.
 terraform init
 terraform plan
 terraform apply
-```  
+```
+
+---
+
+## File Structure
+
+```text
+.
+├── README.md
+├── S3.tf
+├── sg.tf
+└── .gitignore
+```
 
 ---
 
@@ -41,11 +55,20 @@ terraform apply
 - providerで使用するクラウドを決める  
   The provider defines which cloud is used.
 
-- resourceで作成するリソースの種類（S3、EC2など）を決める  
-  Resources define what is created (e.g., S3, EC2).
+- resourceで作成するリソースの種類（S3、EC2、Security Groupなど）を決める  
+  Resources define what is created (e.g., S3, EC2, Security Groups).
 
 - bucketパラメータで実際のS3バケット名を決める  
   The bucket parameter defines the actual S3 bucket name in AWS.
 
 - S3バケット名は世界で一意である必要がある  
   S3 bucket names must be globally unique.
+
+- Security GroupでSSH(22)通信を制御できる  
+  Security Groups can control SSH (port 22) access.
+
+- Terraform applyでAWSへ実際にリソースを作成できる  
+  Terraform apply provisions resources on AWS.
+
+- GitとGitHubを使用してTerraformコードを管理できる  
+  Terraform code can be managed using Git and GitHub.
