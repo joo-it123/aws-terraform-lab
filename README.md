@@ -72,3 +72,9 @@ terraform apply
 
 - GitとGitHubを使用してTerraformコードを管理できる  
   Terraform code can be managed using Git and GitHub.
+
+- EC2インスタンスをTerraformで作成できる  
+  EC2 instances can be provisioned using Terraform.
+
+- Security GroupをEC2へ関連付けできる  
+  Security Groups can be attached to EC2 instances.
