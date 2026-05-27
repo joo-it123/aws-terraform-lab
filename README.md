@@ -78,3 +78,15 @@ terraform apply
 
 - Security GroupをEC2へ関連付けできる  
   Security Groups can be attached to EC2 instances.
+
+- EC2上にnginx（エンジンエックス）をインストールしWebサーバーを構築できる  
+  nginx (Engine X) can be installed on EC2 to serve web content.
+
+- Security Groupの80番ポートを開放することでHTTP通信を許可できる  
+  Opening port 80 in a Security Group allows HTTP access from the internet.
+
+- EC2のPublic IPにアクセスすることでWebページを公開できる  
+  Web pages can be served via the EC2 public IP address.
+
+- HTMLファイルを作成し、nginxを通じてWebページとして公開できる  
+  HTML files can be created and served as web pages through nginx on EC2.
