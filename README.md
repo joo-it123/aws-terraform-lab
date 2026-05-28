@@ -1,28 +1,83 @@
 # AWS Terraform Lab
 
-Terraformを使ってAWS環境を構築する学習用リポジトリです。
-
-This repository is for learning AWS infrastructure provisioning using Terraform.
-
----
-
-## Services（作成対象）
-
-- EC2（仮想サーバー）
-- S3（オブジェクトストレージ）
-- Security Group（ファイアウォール設定）
+Terraformを使ってAWS上にインフラを構築した学習用リポジトリです。  
+AWSの基本的なネットワーク構築と、単体のリソース作成を学習目的としています。
 
 ---
 
-## Tools（使用技術）
+### ■ network-core（ネットワーク基盤）
 
-- Terraform（IaCツール）
-- AWS（クラウド環境）
-- Git / GitHub
+AWS上のネットワーク環境を構築するTerraformコードです。
+
+構成：
+- VPC
+- Public Subnet
+- Route Table
+- Internet Gateway
+- Security Group
+
+役割：
+- インターネット接続可能なネットワークの構築
+- EC2配置用の基盤作成
+
+目的：
+- VPC + Public Subnetで外部公開を前提とした基本的なネットワーク構成を理解する
+- AWSにおけるネットワーク設計と公開手順の一連の流れを学習する
 
 ---
 
-## Usage（使い方）
+### ■ bassic（リソース構築）
+
+AWSリソースを作成するTerraformコードです。
+
+構成：
+- EC2（Webサーバー）
+- S3（ストレージ）
+- Security Group
+
+役割：
+- EC2インスタンスの作成
+- nginxなどWebサーバーの構築
+- S3バケットの作成
+
+目的：
+- EC2とS3を使った基本的なAWSリソース操作を理解する
+- セキュリティグループによる通信制御の基本を学習する
+- Webサーバー公開までの構築フローを体験する
+
+---
+
+## ディレクトリ構成
+
+```text
+.
+├── network-core/
+│   ├── vpc.tf
+│   ├── subnet.tf
+│   ├── routetable.tf
+│   ├── igw.tf
+│   └── sg.tf
+│
+├── bassic/
+│   ├── ec2.tf
+│   ├── s3.tf
+│   └── sg.tf
+│
+├── README.md
+└── .gitignore
+```
+
+---
+
+## 使用技術
+
+- Terraform（Infrastructure as Code）
+- AWS（Cloud Infrastructure）
+- Git / GitHub（バージョン管理）
+
+---
+
+## 使い方
 
 ```bash
 terraform init
@@ -32,61 +87,13 @@ terraform apply
 
 ---
 
-## File Structure
 
-```text
-.
-├── README.md
-├── S3.tf
-├── sg.tf
-└── .gitignore
-```
+## 学習内容
 
----
-
-## Learned（学んだこと）
-
-- TerraformはAWSなどのインフラをコードで管理するツール  
-  Terraform is an Infrastructure as Code (IaC) tool for managing AWS infrastructure.
-
-- AWSアクセスキーを使ってTerraformとAWSを連携する  
-  Terraform connects to AWS using access keys.
-
-- providerで使用するクラウドを決める  
-  The provider defines which cloud is used.
-
-- resourceで作成するリソースの種類（S3、EC2、Security Groupなど）を決める  
-  Resources define what is created (e.g., S3, EC2, Security Groups).
-
-- bucketパラメータで実際のS3バケット名を決める  
-  The bucket parameter defines the actual S3 bucket name in AWS.
-
-- S3バケット名は世界で一意である必要がある  
-  S3 bucket names must be globally unique.
-
-- Security GroupでSSH(22)通信を制御できる  
-  Security Groups can control SSH (port 22) access.
-
-- Terraform applyでAWSへ実際にリソースを作成できる  
-  Terraform apply provisions resources on AWS.
-
-- GitとGitHubを使用してTerraformコードを管理できる  
-  Terraform code can be managed using Git and GitHub.
-
-- EC2インスタンスをTerraformで作成できる  
-  EC2 instances can be provisioned using Terraform.
-
-- Security GroupをEC2へ関連付けできる  
-  Security Groups can be attached to EC2 instances.
-
-- EC2上にnginx（エンジンエックス）をインストールしWebサーバーを構築できる  
-  nginx (Engine X) can be installed on EC2 to serve web content.
-
-- Security Groupの80番ポートを開放することでHTTP通信を許可できる  
-  Opening port 80 in a Security Group allows HTTP access from the internet.
-
-- EC2のPublic IPにアクセスすることでWebページを公開できる  
-  Web pages can be served via the EC2 public IP address.
-
-- HTMLファイルを作成し、nginxを通じてWebページとして公開できる  
-  HTML files can be created and served as web pages through nginx on EC2.
+- VPCの作成とネットワーク設計
+- Public Subnetの理解
+- Route TableとInternet Gatewayの役割
+- EC2インスタンスの作成
+- Security Groupによる通信制御
+- S3バケットの作成
+- Terraformによるインフラ管理（IaC）
